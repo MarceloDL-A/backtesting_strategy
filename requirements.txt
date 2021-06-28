@@ -4,3 +4,4 @@ streamlit==0.62.0
 scipy
 fuzzywuzzy==0.18.0
 sklearn
+flask
