@@ -75,25 +75,25 @@ def adjust_floating_point(data):
 			data[item] = data[item].astype(float)
 	return data
 
-def save_data_on_database(data, trading_pair):
+# def save_data_on_database(data, trading_pair):
 
-	engine = create_engine('postgresql://postgres:lifeistotallyfineifyoucare@localhost:5432/projetointegrador')
-	data.to_sql(
-		trading_pair.lower(),
-		engine,
-		if_exists='replace',
-		index=False,
-		chunksize=500,
-		schema='cryptos',
-		dtype={
-			"Open Time": DateTime,
-			"Open": Numeric,
-			"High": Numeric,
-			"Low": Numeric,
-			"Close": Numeric,
-			"Volume": Numeric
-		}
-	)
+	# engine = create_engine('postgresql://postgres:lifeistotallyfineifyoucare@localhost:5432/projetointegrador')
+	# data.to_sql(
+		# trading_pair.lower(),
+		# engine,
+		# if_exists='replace',
+		# index=False,
+		# chunksize=500,
+		# schema='cryptos',
+		# dtype={
+			# "Open Time": DateTime,
+			# "Open": Numeric,
+			# "High": Numeric,
+			# "Low": Numeric,
+			# "Close": Numeric,
+			# "Volume": Numeric
+		# }
+	# )
 
 @app.route('/<string:trading_pair>')
 def print_dataframe(trading_pair):
@@ -103,7 +103,7 @@ def print_dataframe(trading_pair):
 	data = data_wrangle_df(data)
 	parsed = json.loads(data.to_json(orient='records'))
 	dumps = json.dumps(parsed, indent=4, sort_keys=True)
-	save_data_on_database(data, trading_pair)
+	# save_data_on_database(data, trading_pair)
 	return Response(dumps, mimetype='application/json')
 """	
 @app.route('/buy')

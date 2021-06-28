@@ -16,3 +16,4 @@ seaborn
 ta
 xlsxwriter
 pybase64
+backtesting
