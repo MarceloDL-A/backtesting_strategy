@@ -5,3 +5,4 @@ scipy
 fuzzywuzzy==0.18.0
 sklearn
 flask
+sqlalchemy
