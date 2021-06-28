@@ -6,3 +6,13 @@ fuzzywuzzy==0.18.0
 sklearn
 flask
 sqlalchemy
+json
+matplotlib
+pandas_datareader
+sweetviz
+dabl
+yfinance
+seaborn
+ta
+xlsxwriter
+pybase64
